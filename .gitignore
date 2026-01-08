@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .env
 cookies.txt
+.env.example
+test_connection.py
+test_db.py
