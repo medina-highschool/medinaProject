@@ -13,7 +13,7 @@ class Config:
     # DB_NAME = os.environ.get('DB_NAME') or 'postgres'
 
     SQLALCHEMY_DATABASE_URI = (
-        f"postgresql://postgres.fmovjkhibadscwtmuous:smamediaBdg20@aws-1-ap-southeast-1.pooler.supabase.com:5432/postgres"
+        f"postgresql://postgres.ugymtnpniumwftptspmp:smamediaBdg20@aws-1-ap-southeast-2.pooler.supabase.com:6543/postgres"
     )
     
     SQLALCHEMY_TRACK_MODIFICATIONS = False
