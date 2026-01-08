@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Detail {{ ekskul.nama }} - SMA Medina Bandung{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 50px; margin-bottom: 100px; max-width: 700px;">
+    <div style="text-align: center; margin-bottom: 40px;">
+        <span style="background: #17a2b8; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">{{ ekskul.kategori }}</span>
+        <h1 style="color: #0D2A4C; margin: 15px 0;">Detail {{ ekskul.nama }}</h1>
+        <p style="color: #666;">Informasi lengkap tentang ekstrakurikuler ini.</p>
+    </div>
+
+    <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid #17a2b8;">
+        
+        <div style="background: #e9f7fe; padding: 15px; border-radius: 10px; margin-bottom: 30px; display: flex; align-items: flex-start; gap: 15px;">
+            <div style="font-size: 2em; color: #17a2b8;"><i class="fas fa-info-circle"></i></div>
+            <div>
+                <strong style="color: #0D2A4C;">Jadwal Latihan:</strong><br>
+                <span style="color: #555;">{{ ekskul.jadwal }}</span>
+                <br><br>
+                <strong style="color: #0D2A4C;">Pembina:</strong><br>
+                <span style="color: #555;">{{ ekskul.pembina }}</span>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 30px;">
+            <h3 style="color: #0D2A4C; margin-bottom: 15px;">Deskripsi</h3>
+            <p style="color: #666; line-height: 1.8;">{{ ekskul.deskripsi }}</p>
+        </div>
+
+        <div style="background: #fff3cd; padding: 20px; border-radius: 10px; border-left: 4px solid #ffc107; margin-bottom: 30px;">
+            <strong style="color: #856404;"><i class="fas fa-lightbulb"></i> Informasi Penting:</strong>
+            <ul style="margin: 10px 0 0 0; padding-left: 20px; color: #856404;">
+                <li>Ekstrakurikuler ini terbuka untuk semua tingkat kelas (X, XI, XII)</li>
+                <li>Kehadiran minimal 75% untuk mendapatkan sertifikat</li>
+                <li>Berpakaian sesuai dengan aktivitas ekstrakurikuler</li>
+                <li>Untuk informasi lebih lanjut, hubungi pembina melalui guru BK</li>
+            </ul>
+        </div>
+
+        <a href="{{ url_for('site.ekstrakurikuler') }}" style="display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #17a2b8, #138496); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 15px rgba(23,162,184,0.3); transition: all 0.3s ease;">
+            <i class="fas fa-arrow-left"></i> Kembali ke Daftar
+        </a>
+    </div>
+</div>
+
+<style>
+a[style*="background: linear-gradient"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(23,162,184,0.4);
+}
+</style>
+
+{% endblock %}
