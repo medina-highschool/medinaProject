@@ -17,16 +17,14 @@
         </div>
 
         <div class="content-text">
-            {% if dummy_db and dummy_db.profil_content and dummy_db.profil_content.sejarah %}
-                {% for paragraph in dummy_db.profil_content.sejarah.split('\n\n') %}
-                    <p>{{ paragraph }}</p>
+            {% if info and info.sejarah %}
+                {% for paragraph in info.sejarah.split('\n\n') %}
+                    {% if paragraph.strip() %}
+                        <p>{{ paragraph }}</p>
+                    {% endif %}
                 {% endfor %}
             {% else %}
-                <p>SMA Medina Bandung didirikan pada tahun 1995 dengan visi menjadi lembaga pendidikan yang unggul dalam mengembangkan potensi siswa secara holistik. Berawal dari sebuah gedung sederhana dengan hanya 3 kelas, kini SMA Medina telah berkembang menjadi salah satu sekolah favorit di kota Bandung.</p>
-
-                <p>Dalam perjalanannya selama lebih dari 25 tahun, SMA Medina telah menghasilkan ribuan alumni yang tersebar di berbagai perguruan tinggi ternama di Indonesia dan luar negeri. Prestasi demi prestasi terus diraih, baik di bidang akademik maupun non-akademik.</p>
-
-                <p>Dengan motto "Berakhlak, Berprestasi, Berwawasan Global", SMA Medina terus berkomitmen untuk memberikan pendidikan berkualitas yang tidak hanya fokus pada aspek kognitif, tetapi juga pengembangan karakter dan soft skills siswa.</p>
+                <p>Belum ada data sejarah sekolah.</p>
             {% endif %}
         </div>
 
