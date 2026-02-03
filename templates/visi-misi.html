@@ -16,10 +16,10 @@
             <h2>VISI</h2>
         </div>
         <div class="box-content">
-            {% if dummy_db and dummy_db.profil_content and dummy_db.profil_content.visi %}
-                <p>{{ dummy_db.profil_content.visi }}</p>
+            {% if info and info.visi %}
+                <p>{{ info.visi }}</p>
             {% else %}
-                <p>Menjadi sekolah menengah atas yang unggul, berkarakter, dan berwawasan global dalam mencetak generasi pemimpin masa depan yang berakhlak mulia.</p>
+                <p>Belum ada data visi.</p>
             {% endif %}
         </div>
     </div>
@@ -30,24 +30,16 @@
             <h2>MISI</h2>
         </div>
         <div class="box-content">
-            {% if dummy_db and dummy_db.profil_content and dummy_db.profil_content.misi %}
+            {% if info and info.misi %}
                 <ol class="misi-list">
-                    {% for misi_item in dummy_db.profil_content.misi.split('\n') %}
+                    {% for misi_item in info.misi.split('\n') %}
                         {% if misi_item.strip() %}
                             <li>{{ misi_item.strip('0123456789. ') }}</li>
                         {% endif %}
                     {% endfor %}
                 </ol>
             {% else %}
-                <ol class="misi-list">
-                    <li>Menyelenggarakan pendidikan berkualitas dengan standar nasional dan internasional</li>
-                    <li>Mengembangkan potensi akademik dan non-akademik siswa secara optimal</li>
-                    <li>Membentuk karakter siswa yang berakhlak mulia, disiplin, dan bertanggung jawab</li>
-                    <li>Menciptakan lingkungan belajar yang kondusif, inovatif, dan berbasis teknologi</li>
-                    <li>Membangun kerjasama dengan berbagai pihak untuk pengembangan sekolah</li>
-                    <li>Mempersiapkan siswa untuk bersaing di tingkat nasional dan internasional</li>
-                    <li>Mengintegrasikan nilai-nilai keislaman dalam setiap aspek pembelajaran</li>
-                </ol>
+                <p>Belum ada data misi.</p>
             {% endif %}
         </div>
     </div>
@@ -77,130 +69,24 @@
 </div>
 
 <style>
-    .page-header {
-        text-align: center;
-        margin-bottom: 50px;
-        animation: fadeInDown 0.8s ease;
-    }
-
-    .visi-box,
-    .misi-box {
-        max-width: 900px;
-        margin: 0 auto 40px;
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        animation: fadeInUp 0.6s ease;
-    }
-
-    .box-header {
-        background: linear-gradient(135deg, #28a745, #20c997);
-        color: white;
-        padding: 30px;
-        text-align: center;
-    }
-
-    .header-icon {
-        font-size: 3.5em;
-        margin-bottom: 10px;
-    }
-
-    .box-header h2 {
-        margin: 0;
-        font-size: 2em;
-        letter-spacing: 3px;
-    }
-
-    .box-content {
-        padding: 40px;
-    }
-
-    .box-content p {
-        color: #666;
-        line-height: 1.8;
-        font-size: 1.15em;
-        text-align: center;
-        margin: 0;
-    }
-
-    .misi-list {
-        color: #666;
-        line-height: 2;
-        font-size: 1.05em;
-        padding-left: 30px;
-        margin: 0;
-    }
-
-    .misi-list li {
-        margin-bottom: 15px;
-        padding-left: 10px;
-    }
-
-    .values-section {
-        max-width: 900px;
-        margin: 60px auto 0;
-        animation: fadeInUp 0.6s ease 0.3s both;
-    }
-
-    .values-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-    }
-
-    .value-card {
-        background: white;
-        padding: 35px;
-        border-radius: 20px;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        transition: all 0.3s ease;
-    }
-
-    .value-icon {
-        font-size: 3.5em;
-        margin-bottom: 15px;
-        color: #28a745;
-    }
-
-    .value-card h3 {
-        color: #28a745;
-        margin: 0 0 15px 0;
-        font-size: 1.4em;
-    }
-
-    .value-card p {
-        color: #666;
-        margin: 0;
-        line-height: 1.6;
-    }
-
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .value-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    }
+    /* Style tetap sama seperti sebelumnya */
+    .page-header { text-align: center; margin-bottom: 50px; animation: fadeInDown 0.8s ease; }
+    .visi-box, .misi-box { max-width: 900px; margin: 0 auto 40px; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); animation: fadeInUp 0.6s ease; }
+    .box-header { background: linear-gradient(135deg, #28a745, #20c997); color: white; padding: 30px; text-align: center; }
+    .header-icon { font-size: 3.5em; margin-bottom: 10px; }
+    .box-header h2 { margin: 0; font-size: 2em; letter-spacing: 3px; }
+    .box-content { padding: 40px; }
+    .box-content p { color: #666; line-height: 1.8; font-size: 1.15em; text-align: center; margin: 0; }
+    .misi-list { color: #666; line-height: 2; font-size: 1.05em; padding-left: 30px; margin: 0; }
+    .misi-list li { margin-bottom: 15px; padding-left: 10px; }
+    .values-section { max-width: 900px; margin: 60px auto 0; animation: fadeInUp 0.6s ease 0.3s both; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .value-card { background: white; padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+    .value-icon { font-size: 3.5em; margin-bottom: 15px; color: #28a745; }
+    .value-card h3 { color: #28a745; margin: 0 0 15px 0; font-size: 1.4em; }
+    .value-card p { color: #666; margin: 0; line-height: 1.6; }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .value-card:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
 </style>
 {% endblock %}
